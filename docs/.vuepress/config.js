@@ -37,84 +37,125 @@ module.exports = {
     ],
     plugins: [],
     themeConfig: {
-        repo: "https://github.com/ken-dingxj/ding-blog.git",
+        repo: "https://github.com/Ken-ding/ding-boke.git",
         repoLabel: "GitHub",
         docsDir: "docs",
         editLinks: true,
         editLinkText: "错别字纠正",
         sidebarDepth: 3,
+        smoothScroll: true,
         nav: [
             { text: "主页", link: "/" },
             {
                 text: "基础篇",
-                link: "/read",
                 items: [
-                    { text: "思维", link: "/read/think/readBookStep" },
-                    {
-                        text: "认知",
-                        link: "/read/cognitiveImprovement/cognitiveImprovement",
-                    },
+                    { text: "html", link: "/base/html/" },
+                    {text: "css",link: "/base/css/"},
+                    {text: "js",link: "/base/js/"},
+                    {text: "http",link: "/base/http/"}
                 ],
+            },
+            {
+                text: "提升篇",
+                items: [
+                    { text: "html", link: "/promote/html/" },
+                    { text: "css", link: "/promote/css/" },
+                    { text: "js", link: "/promote/js/" },
+                    { text: "http", link: "/promote/http/" }
+                ]
             },
             {
                 text: "框架篇",
                 items: [
-                    { text: "webpack", link: "/code/webpack/" },
-                    { text: "vue", link: "/code/vue/" },
-                    { text: "react", link: "/code/react/" }
+                    { text: "vue", link: "/framework/vue/" },
+                    { text: "react", link: "/framework/react/"},
+                    { text: "babel", link: "/framework/babel/" },
+                    { text: "webpack", link: "/framework/webpack/" }
                 ],
             },
             {
                 text: "项目篇",
-                link: "/engineer/",
-            },
-            { text: "算法篇", link: "/algorithm/" },
-
-            {
-                text: "提升篇",
                 items: [
-                    { text: "deploy", link: "/operation/deploy/" },
-                    { text: "http", link: "/operation/http/" },
-                    { text: "ssh", link: "/operation/ssh/" }
-                ]
+                    { text: "脚手架方案", link: "/project/cli/" },
+                    { text: "多页面方案", link: "/project/page/"},
+                    { text: "部署方案", link: "/project/deploy/" },
+                    { text: "代码规范方案", link: "/project/code/" },
+                    { text: "技术方案", link: "/project/technology/" },
+                    { text: "组件库方案", link: "/project/component/" },
+                    { text: "监控方案", link: "/project/monitor/" }
+                ],
             },
-
-            {
-                text: "面试篇",
+            { 
+                text: "算法篇", 
                 items: [
-                    { text: "html", link: "/interview/html/" },
-                    { text: "css", link: "/interview/css/" },
-                    { text: "js", link: "/interview/js/" },
-                    { text: "算法", link: "/interview/sunfa/" },
-                    { text: "网络", link: "/interview/net/" },
+                    { text: "算法基础", link: "/algorithm/base/" },
+                    { text: "初级算法", link: "/algorithm/primaryRank/"},
+                    { text: "中级算法", link: "/algorithm/middleRank/"},
+                    { text: "高级算法", link: "/algorithm/highRank/"}
+                ],
+            },
+            {
+                text: "文档篇",
+                items: [
+                    { text: "lodash文档", link: "/document/lodash/" },
+                    { text: "axios文档", link: "/document/axios/" },
+                    { text: "vue文档", link: "/document/vue/" },
+                    { text: "moment文档", link: "/document/moment/" }
                 ]
             },
         ],
         sidebar: {
-            "/read/think/": ["readBookStep"],
-            "read/cognitiveImprovement": ["cognitiveImprovement"],
-            "/book/jsUp/": [""],
-            "/algorithm/": [""],
-            "/front/think/": [""],
-            "/front/book/designPattern/": [""],
-            "/front/book/up/": [""],
-            "/back/crazy/": [""],
-            "/operation/deploy/": [""],
-            "/operation/http/": [""],
-            "/operation/ssh/": [""],
-            "/code/vue/": [""],
-            "/project/boke/": [""],
-            "/front/npm/": [""],
-            "/Engineering/": [""],
-            "/code/webpack/": [""],
-            "/css/": [""],
-            "/code/react/": [""],
-            "/interview/html/": [""],
-            "/interview/css/": [""],
-            "/interview/js/": [""],
-            "/interview/sunfa/": [""],
-            "/interview/net/": [""],
-            "/webkit/Reflow & Repaint/": [""]
+            ...handlePathA("base",["html","css","js","http"]),
+            ...handlePathB("promote",{"html":[["","自定义"]],"css":[["","自定义"]["","自定义"]],"js":[["","自定义"]],"http":[["","自定义"]]}),
+            ...handlePathB("framework",{"vue":[["","自定义"]],"react":[["","自定义"]],"babel":[["","自定义"]],"webapck":[["","自定义"]]}),
+            ...handlePathB("project",{"cli":[["","自定义"]],"code":[["","自定义"]],"component":[["","自定义"]],"deploy":[["","自定义"]],"monitor":[["","自定义"]],"page":[["","自定义"]],"technology":[["","自定义"]]}),
+            ...handlePathB("algorithm",{"base":[["","自定义"]],"primaryRank":[["","自定义"]],"middleRank":[["","自定义"]],"highRank":[["","自定义"]]}),
+            ...handlePathB("document",{"lodash":[["","自定义"]],"axios":[["","自定义"]["","自定义"]],"vue":[["","自定义"]],"moment":[["","自定义"]]}),
         },
     },
 };
+
+function handlePathA(root,pathArr){
+    let obj={};
+    for (const path of pathArr) {
+        let allPth="/"+root+"/"+path+"/";
+        obj[allPth]=getThemeSidebarA(path);
+    }
+    return obj;
+}
+
+function handlePathB(root,pathObj){
+    let obj={};
+    let paths=Object.keys(pathObj)
+    for (const path of paths) {
+        let allPth="/"+root+"/"+path+"/";
+        obj[allPth]=getThemeSidebarB(path,pathObj[path]);
+    }
+    return obj;
+}
+
+function getThemeSidebarA (groupA,introductionA) {
+    introductionA="概括";
+    return [
+      {
+        title: groupA,
+        collapsable: false,
+        sidebarDepth: 2,
+        children: [
+         ['',introductionA],
+          ['one','第一章'],
+          ['tow','第二章'],
+        ]
+      }
+    ]
+  }
+  function getThemeSidebarB (groupB,children) {
+    return [
+      {
+        title: groupB,
+        collapsable: false,
+        sidebarDepth: 2,
+        children: children
+      }
+    ]
+  }

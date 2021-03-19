@@ -12,5 +12,5 @@ features:
   details: 告别碎片化学习，构筑系统的前端知识体系
 - title: 重视实践
   details: 纸上得来终觉浅，绝知此事要躬行
-footer: MIT Licensed | Copyright © 2020-present dingxuejin
+footer: MIT Licensed | Copyright © 2021-present dingxuejin
 ---
