@@ -1,6 +1,7 @@
 module.exports = {
     port: "3000",
     base: "/",
+    dest: './dist',
     ga: "UA-xxxxx-1",
     title: "茶余饭后",
     description: "docs",
@@ -106,11 +107,11 @@ module.exports = {
         ],
         sidebar: {
             ...handlePathA("base",["html","css","js","http"]),
-            ...handlePathB("promote",{"html":[["","自定义"]],"css":[["","自定义"]["","自定义"]],"js":[["","自定义"]],"http":[["","自定义"]]}),
+            ...handlePathB("promote",{"html":[["","自定义"]],"css":[["","自定义"]],"js":[["","自定义"]],"http":[["","自定义"]]}),
             ...handlePathB("framework",{"vue":[["","自定义"]],"react":[["","自定义"]],"babel":[["","自定义"]],"webapck":[["","自定义"]]}),
             ...handlePathB("project",{"cli":[["","自定义"]],"code":[["","自定义"]],"component":[["","自定义"]],"deploy":[["","自定义"]],"monitor":[["","自定义"]],"page":[["","自定义"]],"technology":[["","自定义"]]}),
             ...handlePathB("algorithm",{"base":[["","自定义"]],"primaryRank":[["","自定义"]],"middleRank":[["","自定义"]],"highRank":[["","自定义"]]}),
-            ...handlePathB("document",{"lodash":[["","自定义"]],"axios":[["","自定义"]["","自定义"]],"vue":[["","自定义"]],"moment":[["","自定义"]]}),
+            ...handlePathB("document",{"lodash":[["","自定义"]],"axios":[["","自定义"]],"vue":[["","自定义"]],"moment":[["","自定义"]]}),
         },
     },
 };
@@ -144,7 +145,7 @@ function getThemeSidebarA (groupA,introductionA) {
         children: [
          ['',introductionA],
           ['one','第一章'],
-          ['tow','第二章'],
+          ['two','第二章'],
         ]
       }
     ]
