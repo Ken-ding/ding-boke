@@ -6,3 +6,5 @@ docx
 .DS_Store
 .vscode
 .idea
+.history
+.vscode

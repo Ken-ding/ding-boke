@@ -9,8 +9,8 @@ features:
 - title: 夯实基础
   details: 不积跬步无以至千里, 仰望星空还需脚踏实地
 - title: 构建体系
-  details: 告别碎片化学习，帮助你构筑你自己的知识体系
-- title: 全栈开发
-  details: 全栈开发,系统学习
+  details: 告别碎片化学习，构筑系统的前端知识体系
+- title: 重视实践
+  details: 纸上得来终觉浅，绝知此事要躬行
 footer: MIT Licensed | Copyright © 2020-present dingxuejin
 ---
