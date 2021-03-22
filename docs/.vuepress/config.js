@@ -50,10 +50,12 @@ module.exports = {
             {
                 text: "基础篇",
                 items: [
+                    { text: "js", link: "/base/js/" },
+                    { text: "es6", link: "/base/es6/" },
+                    { text: "http", link: "/base/http/" },
                     { text: "html", link: "/base/html/" },
-                    {text: "css",link: "/base/css/"},
-                    {text: "js",link: "/base/js/"},
-                    {text: "http",link: "/base/http/"}
+                    { text: "css", link: "/base/css/" },
+                    { text: "css3", link: "/base/css3/" },
                 ],
             },
             {
@@ -69,7 +71,7 @@ module.exports = {
                 text: "框架篇",
                 items: [
                     { text: "vue", link: "/framework/vue/" },
-                    { text: "react", link: "/framework/react/"},
+                    { text: "react", link: "/framework/react/" },
                     { text: "babel", link: "/framework/babel/" },
                     { text: "webpack", link: "/framework/webpack/" }
                 ],
@@ -78,7 +80,7 @@ module.exports = {
                 text: "项目篇",
                 items: [
                     { text: "脚手架方案", link: "/project/cli/" },
-                    { text: "多页面方案", link: "/project/page/"},
+                    { text: "多页面方案", link: "/project/page/" },
                     { text: "部署方案", link: "/project/deploy/" },
                     { text: "代码规范方案", link: "/project/code/" },
                     { text: "技术方案", link: "/project/technology/" },
@@ -86,13 +88,13 @@ module.exports = {
                     { text: "监控方案", link: "/project/monitor/" }
                 ],
             },
-            { 
-                text: "算法篇", 
+            {
+                text: "算法篇",
                 items: [
                     { text: "算法基础", link: "/algorithm/base/" },
-                    { text: "初级算法", link: "/algorithm/primaryRank/"},
-                    { text: "中级算法", link: "/algorithm/middleRank/"},
-                    { text: "高级算法", link: "/algorithm/highRank/"}
+                    { text: "初级算法", link: "/algorithm/primaryRank/" },
+                    { text: "中级算法", link: "/algorithm/middleRank/" },
+                    { text: "高级算法", link: "/algorithm/highRank/" }
                 ],
             },
             {
@@ -106,57 +108,109 @@ module.exports = {
             },
         ],
         sidebar: {
-            ...handlePathA("base",["html","css","js","http"]),
-            ...handlePathB("promote",{"html":[["","自定义"]],"css":[["","自定义"]],"js":[["","自定义"]],"http":[["","自定义"]]}),
-            ...handlePathB("framework",{"vue":[["","自定义"]],"react":[["","自定义"]],"babel":[["","自定义"]],"webapck":[["","自定义"]]}),
-            ...handlePathB("project",{"cli":[["","自定义"]],"code":[["","自定义"]],"component":[["","自定义"]],"deploy":[["","自定义"]],"monitor":[["","自定义"]],"page":[["","自定义"]],"technology":[["","自定义"]]}),
-            ...handlePathB("algorithm",{"base":[["","自定义"]],"primaryRank":[["","自定义"]],"middleRank":[["","自定义"]],"highRank":[["","自定义"]]}),
-            ...handlePathB("document",{"lodash":[["","自定义"]],"axios":[["","自定义"]],"vue":[["","自定义"]],"moment":[["","自定义"]]}),
+            ...handlePathB("base", base()),
+            ...handlePathB("promote", { "html": [["", "自定义"]], "css": [["", "自定义"]], "js": [["", "自定义"]], "http": [["", "自定义"]] }),
+            ...handlePathB("framework", { "vue": [["", "自定义"]], "react": [["", "自定义"]], "babel": [["", "自定义"]], "webapck": [["", "自定义"]] }),
+            ...handlePathB("project", { "cli": [["", "自定义"]], "code": [["", "自定义"]], "component": [["", "自定义"]], "deploy": [["", "自定义"]], "monitor": [["", "自定义"]], "page": [["", "自定义"]], "technology": [["", "自定义"]] }),
+            ...handlePathB("algorithm", { "base": [["", "自定义"]], "primaryRank": [["", "自定义"]], "middleRank": [["", "自定义"]], "highRank": [["", "自定义"]] }),
+            ...handlePathB("document", { "lodash": [["", "自定义"]], "axios": [["", "自定义"]], "vue": [["", "自定义"]], "moment": [["", "自定义"]] }),
         },
     },
 };
 
-function handlePathA(root,pathArr){
-    let obj={};
-    for (const path of pathArr) {
-        let allPth="/"+root+"/"+path+"/";
-        obj[allPth]=getThemeSidebarA(path);
-    }
-    return obj;
-}
-
-function handlePathB(root,pathObj){
-    let obj={};
-    let paths=Object.keys(pathObj)
-    for (const path of paths) {
-        let allPth="/"+root+"/"+path+"/";
-        obj[allPth]=getThemeSidebarB(path,pathObj[path]);
-    }
-    return obj;
-}
-
-function getThemeSidebarA (groupA,introductionA) {
-    introductionA="概括";
-    return [
-      {
-        title: groupA,
-        collapsable: false,
-        sidebarDepth: 2,
-        children: [
-         ['',introductionA],
-          ['one','第一章'],
-          ['two','第二章'],
+function base() {
+    return {
+        "html": [
+            ["", "概括"],
+            ["one", "第一章"],
+            ["two", "第二章"],
+            ["three", "第三章"]
+        ],
+        "css": [
+            ["", "概括"],
+            ["ten", "第十章"],
+            ["eleven", "第十一章"]
+        ],
+        "css3": [
+            ["", "自定义"]
+        ],
+        "js": [
+            ["", "概括"],
+            ["one", "第一章"],
+            ["two", "第二章"],
+            ["three", "第三章"],
+            ["four", "第四章"],
+            ["five", "第五章"],
+            ["six", "第六章"],
+            ["seven", "第七章"],
+            ["ECMAScript", "ECMAScript篇复盘"],
+            ["eight", "第八章"],
+            ["nine", "第九章"],
+            ["BOM", "BOM篇复盘"],
+            ["ten", "第十章"],
+            ["eleven", "第十一章"],
+        ],
+        "es6": [
+            ["", "概括"],
+            ["two", "第二章"]
+        ],
+        "http": [
+            ["", "概括"],
+            ["one", "第一章"],
+            ["two", "第二章"],
+            ["three", "第三章"],
+            ["four", "第四章"],
+            ["five", "第五章"],
+            ["six", "第六章"],
+            ["seven", "第七章"],
+            ["eight", "第八章"],
         ]
-      }
-    ]
-  }
-  function getThemeSidebarB (groupB,children) {
+    }
+}
+
+function handlePathA(root, pathArr) {
+    let obj = {};
+    for (const path of pathArr) {
+        let allPth = "/" + root + "/" + path + "/";
+        obj[allPth] = getThemeSidebarA(path);
+    }
+    return obj;
+}
+
+function handlePathB(root, pathObj) {
+    let obj = {};
+    let paths = Object.keys(pathObj)
+    for (const path of paths) {
+        let allPth = "/" + root + "/" + path + "/";
+        obj[allPth] = getThemeSidebarB(path, pathObj[path]);
+    }
+    return obj;
+}
+
+function getThemeSidebarA(groupA, introductionA) {
+    introductionA = "概括";
     return [
-      {
-        title: groupB,
-        collapsable: false,
-        sidebarDepth: 2,
-        children: children
-      }
+        {
+            title: groupA,
+            collapsable: false,
+            sidebarDepth: 2,
+            children: [
+                ['', introductionA],
+                ['one', "第一章"],
+                ['two', "第二章"],
+                ['three', "第三章"],
+                ['four', "第四章"],
+            ]
+        }
     ]
-  }
+}
+function getThemeSidebarB(groupB, children) {
+    return [
+        {
+            title: groupB,
+            collapsable: false,
+            sidebarDepth: 2,
+            children: children
+        }
+    ]
+}
