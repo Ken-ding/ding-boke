@@ -110,13 +110,17 @@ module.exports = {
         sidebar: {
             ...handlePathB("base", base()),
             ...handlePathB("promote", { "html": [["", "自定义"]], "css": [["", "自定义"]], "js": [["", "自定义"]], "http": [["", "自定义"]] }),
-            ...handlePathB("framework", { "vue": [["", "自定义"]], "react": [["", "自定义"]], "babel": [["", "自定义"]], "webapck": [["", "自定义"]] }),
+            ...handlePathB("framework", framework()),
             ...handlePathB("project", { "cli": [["", "前端脚手架方案"]], "code": [["", "前端代码规范"]], "component": [["", "组件库方案"]], "deploy": [["", "自动化部署流程方案"]], "monitor": [["", "前端监控方案"]], "page": [["", "多页面打包方案"]], "technology": [["", "前端技术方案"]] }),
             ...handlePathB("algorithm", { "base": [["", "自定义"]], "primaryRank": [["", "自定义"]], "middleRank": [["", "自定义"]], "highRank": [["", "自定义"]] }),
             ...handlePathB("document", document()),
         },
     },
 };
+
+function framework() {
+    return { "vue": [["", "数据驱动"]], "react": [["", "自定义"]], "babel": [["", "自定义"]], "webapck": [["", "自定义"]] }
+}
 
 function base() {
     return {
