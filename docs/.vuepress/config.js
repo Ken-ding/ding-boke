@@ -71,7 +71,8 @@ module.exports = {
                 text: "框架篇",
                 items: [
                     { text: "vue", link: "/framework/vue/" },
-                    { text: "react", link: "/framework/react/" },
+                    // { text: "react", link: "/framework/react/" },
+                    { text: "snabbdom", link: "/framework/snabbdom/" },
                     { text: "babel", link: "/framework/babel/" },
                     { text: "webpack", link: "/framework/webpack/" }
                 ],
@@ -119,7 +120,13 @@ module.exports = {
 };
 
 function framework() {
-    return { "vue": [["", "数据驱动"]], "react": [["", "自定义"]], "babel": [["", "自定义"]], "webapck": [["", "自定义"]] }
+    return {
+        "vue": [["", "数据驱动"]],
+        "webpack": [["", "原理"]],
+        "snabbdom": [["", "源码分析"]],
+        "react": [["", "自定义"]],
+        "babel": [["", "bable主流程"], ["bable源码冷知识", "bable源码冷知识"]],
+    }
 }
 
 function base() {
@@ -191,15 +198,6 @@ function document() {
             ["", "概括"],
         ]
     }
-}
-
-function handlePathA(root, pathArr) {
-    let obj = {};
-    for (const path of pathArr) {
-        let allPth = "/" + root + "/" + path + "/";
-        obj[allPth] = getThemeSidebarA(path);
-    }
-    return obj;
 }
 
 function handlePathB(root, pathObj) {
