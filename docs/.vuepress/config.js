@@ -113,7 +113,7 @@ module.exports = {
             ...handlePathB("framework", { "vue": [["", "自定义"]], "react": [["", "自定义"]], "babel": [["", "自定义"]], "webapck": [["", "自定义"]] }),
             ...handlePathB("project", { "cli": [["", "前端脚手架方案"]], "code": [["", "前端代码规范"]], "component": [["", "组件库方案"]], "deploy": [["", "自动化部署流程方案"]], "monitor": [["", "前端监控方案"]], "page": [["", "多页面打包方案"]], "technology": [["", "前端技术方案"]] }),
             ...handlePathB("algorithm", { "base": [["", "自定义"]], "primaryRank": [["", "自定义"]], "middleRank": [["", "自定义"]], "highRank": [["", "自定义"]] }),
-            ...handlePathB("document", { "lodash": [["", "自定义"]], "axios": [["", "自定义"]], "vue": [["", "自定义"]], "moment": [["", "自定义"]] }),
+            ...handlePathB("document", document()),
         },
     },
 };
@@ -164,6 +164,27 @@ function base() {
             ["six", "第六章"],
             ["seven", "第七章"],
             ["eight", "第八章"],
+        ]
+    }
+}
+
+function document() {
+    return {
+        "lodash": [
+            ["", "概览"],
+            ["安装", "安装"],
+            ["版本定制", "版本定制"],
+            ["Array", "Array"],
+            ["Collection和Date", "Collection和Date"],
+        ],
+        "axios": [
+            ["", "axios文档"],
+        ],
+        "vue": [
+            ["", "概括"]
+        ],
+        "moment": [
+            ["", "概括"],
         ]
     }
 }

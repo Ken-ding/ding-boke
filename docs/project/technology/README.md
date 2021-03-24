@@ -1,28 +1,42 @@
 ## 整体内容
-![image.png](https://cdn.nlark.com/yuque/0/2021/png/309803/1612792931133-c24183b0-6fe6-486f-828b-24d42d5e8946.png#align=left&display=inline&height=1246&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1246&originWidth=1934&size=600826&status=done&style=none&width=1934)
+![image.png](/images/project/tech1.png)
 
 ## 参考案例
-![流程图图片.png](https://cdn.nlark.com/yuque/0/2020/png/309803/1584338665395-22ce62e7-7b01-4ac1-ae99-951916b037df.png#align=left&display=inline&height=1436&margin=%5Bobject%20Object%5D&name=%E6%B5%81%E7%A8%8B%E5%9B%BE%E5%9B%BE%E7%89%87.png&originHeight=1436&originWidth=2486&size=1053532&status=done&style=none&width=2486)
+## 主流程
+![流程图图片.png](/images/project/tech2.png)
 ## 页面业务逻辑流程图
 ### 会员评级
-![会员评级_lct.png](https://cdn.nlark.com/yuque/0/2020/png/309803/1584413851094-02f4d50e-1f4d-4cc4-83e1-daf70f57a62c.png#align=left&display=inline&height=1016&margin=%5Bobject%20Object%5D&name=%E4%BC%9A%E5%91%98%E8%AF%84%E7%BA%A7_lct.png&originHeight=1016&originWidth=856&size=212063&status=done&style=none&width=856)
+![会员评级_lct.png](/images/project/tech3.png)
 ### 会员规则
-![会员规则_lct.png](https://cdn.nlark.com/yuque/0/2020/png/309803/1584413808766-0c9659dc-b1f0-499f-8851-2cffe8c32499.png#align=left&display=inline&height=1172&margin=%5Bobject%20Object%5D&name=%E4%BC%9A%E5%91%98%E8%A7%84%E5%88%99_lct.png&originHeight=1172&originWidth=1556&size=347743&status=done&style=none&width=1556)
+![会员规则_lct.png](/images/project/tech4.png)
 ### 会员权益
-![会员权益_lct1.png](https://cdn.nlark.com/yuque/0/2020/png/309803/1584421255802-9fe23a2b-a9b2-43d0-8dd0-608bcd92b20c.png#align=left&display=inline&height=1134&margin=%5Bobject%20Object%5D&name=%E4%BC%9A%E5%91%98%E6%9D%83%E7%9B%8A_lct1.png&originHeight=1134&originWidth=1286&size=282139&status=done&style=none&width=1286)
+![会员权益_lct1.png](/images/project/tech5.png)
 ### 历史会员规则
-![历史会员规则_lct.png](https://cdn.nlark.com/yuque/0/2020/png/309803/1584413908662-1b50a0fe-05ad-44c8-b110-07f1c5e40e73.png#align=left&display=inline&height=1342&margin=%5Bobject%20Object%5D&name=%E5%8E%86%E5%8F%B2%E4%BC%9A%E5%91%98%E8%A7%84%E5%88%99_lct.png&originHeight=1342&originWidth=796&size=266174&status=done&style=none&width=796)
+![历史会员规则_lct.png](/images/project/tech6.png)
 ### 供应商评级
-![供应商评级_lct.png](https://cdn.nlark.com/yuque/0/2020/png/309803/1584413938022-f1a36476-2b2c-4da8-8974-89a659414d55.png#align=left&display=inline&height=1046&margin=%5Bobject%20Object%5D&name=%E4%BE%9B%E5%BA%94%E5%95%86%E8%AF%84%E7%BA%A7_lct.png&originHeight=1046&originWidth=818&size=207882&status=done&style=none&width=818)
+![供应商评级_lct.png](/images/project/tech7.png)
 ### 个人中心
-![东经易网个人中心_lct.png](https://cdn.nlark.com/yuque/0/2020/png/309803/1584413984751-c86b10f8-d945-4359-94d2-646a620f92c4.png#align=left&display=inline&height=1052&margin=%5Bobject%20Object%5D&name=%E4%B8%9C%E7%BB%8F%E6%98%93%E7%BD%91%E4%B8%AA%E4%BA%BA%E4%B8%AD%E5%BF%83_lct.png&originHeight=1052&originWidth=768&size=223400&status=done&style=none&width=768)
+![东经易网个人中心_lct.png](/images/project/tech8.png)
 
 
 ## 任务分解
+### 个人中心
+![个人中心](/images/project/tech9.png)
 
+### 供应商评级
+![供应商评级](/images/project/tech10.png)
 
-[会员体系任务分解](https://www.teambition.com/project/5e5daed657f72e0021c628d9/tasks/view/all)
+### 历史会员规则
+![历史会员规则](/images/project/tech11.png)
 
+### 会员权益
+![会员权益](/images/project/tech12.png)
+
+### 会员规则
+![会员规则](/images/project/tech13.png)
+
+### 会员评级
+![会员评级](/images/project/tech14.png)
 
 ps:也可以使用ximd分解任务
 ## 接口文档（mock数据）
