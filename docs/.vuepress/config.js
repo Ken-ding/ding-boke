@@ -92,10 +92,10 @@ module.exports = {
             {
                 text: "算法篇",
                 items: [
-                    { text: "算法基础", link: "/algorithm/base/" },
-                    { text: "初级算法", link: "/algorithm/primaryRank/" },
-                    { text: "中级算法", link: "/algorithm/middleRank/" },
-                    { text: "高级算法", link: "/algorithm/highRank/" }
+                    { text: "算法基础", link: "/算法/算法基础/" },
+                    { text: "初级算法", link: "/算法/初级算法/" },
+                    { text: "中级算法", link: "/算法/中级算法/" },
+                    { text: "高级算法", link: "/算法/高级算法/" }
                 ],
             },
             {
@@ -113,15 +113,19 @@ module.exports = {
             ...handlePathB("promote", { "html": [["", "自定义"]], "css": [["", "自定义"]], "js": [["", "自定义"]], "http": [["", "自定义"]] }),
             ...handlePathB("framework", framework()),
             ...handlePathB("project", { "cli": [["", "前端脚手架方案"]], "code": [["", "前端代码规范"]], "component": [["", "组件库方案"]], "deploy": [["", "自动化部署流程方案"]], "monitor": [["", "前端监控方案"]], "page": [["", "多页面打包方案"]], "technology": [["", "前端技术方案"]] }),
-            ...handlePathB("algorithm", { "base": [["", "自定义"]], "primaryRank": [["", "自定义"]], "middleRank": [["", "自定义"]], "highRank": [["", "自定义"]] }),
+            ...handlePathB("算法", algorithm()),
             ...handlePathB("document", document()),
         },
     },
 };
 
+function algorithm() {
+    return { "算法基础": [["", "算法基础"]], "初级算法": [["", "初级算法"]], "中级算法": [["", "中级算法"]], "高级算法": [["", "高级算法"]] }
+}
+
 function framework() {
     return {
-        "vue": [["", "数据驱动"]],
+        "vue": [["", "说明"], ["数据驱动", "数据驱动"], ["编译流程", "编译流程"]],
         "webpack": [["", "原理"]],
         "snabbdom": [["", "源码分析"]],
         "react": [["", "自定义"]],
@@ -216,7 +220,7 @@ function getThemeSidebarA(groupA, introductionA) {
         {
             title: groupA,
             collapsable: false,
-            sidebarDepth: 2,
+            sidebarDepth: 3,
             children: [
                 ['', introductionA],
                 ['one', "第一章"],
