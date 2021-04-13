@@ -48,33 +48,17 @@ module.exports = {
         nav: [
             { text: "主页", link: "/" },
             {
-                text: "基础篇",
-                items: [
-                    { text: "js", link: "/base/js/" },
-                    { text: "es6", link: "/base/es6/" },
-                    { text: "http", link: "/base/http/" },
-                    { text: "html", link: "/base/html/" },
-                    { text: "css", link: "/base/css/" },
-                    { text: "css3", link: "/base/css3/" },
-                ],
-            },
-            {
-                text: "提升篇",
-                items: [
-                    { text: "html", link: "/promote/html/" },
-                    { text: "css", link: "/promote/css/" },
-                    { text: "js", link: "/promote/js/" },
-                    { text: "http", link: "/promote/http/" }
-                ]
-            },
-            {
                 text: "框架篇",
                 items: [
-                    { text: "vue", link: "/framework/vue/" },
+                    { text: "vue-数据驱动", link: "/框架/vue/数据驱动/案例代码/" },
+                    { text: "vue-编译流程", link: "/框架/vue/编译流程/回顾/" },
+                    { text: "vue-响应式原理", link: "/框架/vue/响应式原理/案例/" },
+                    { text: "vue-组件化", link: "/框架/vue/组件化/案例/" },
+                    { text: "vue-扩展", link: "/框架/vue/扩展/keep-alive/" },
                     // { text: "react", link: "/framework/react/" },
-                    { text: "snabbdom", link: "/framework/snabbdom/" },
-                    { text: "babel", link: "/framework/babel/" },
-                    { text: "webpack", link: "/framework/webpack/" }
+                    { text: "snabbdom", link: "/框架/snabbdom/" },
+                    { text: "babel", link: "/框架/babel/" },
+                    { text: "webpack", link: "/框架/webpack/初始化阶段/" }
                 ],
             },
             {
@@ -90,12 +74,36 @@ module.exports = {
                 ],
             },
             {
+                text: "基础篇",
+                items: [
+                    { text: "js", link: "/base/js/" },
+                    { text: "es6", link: "/base/es6/" },
+                    { text: "http", link: "/base/http/" },
+                    { text: "html", link: "/base/html/" },
+                    { text: "css", link: "/base/css/" },
+                    { text: "css3", link: "/base/css3/" },
+                ],
+            },
+            {
+                text: "提升篇",
+                items: [
+                    { text: "计算机基础", link: "/promote/计算机基础/" },
+                    { text: "常用算法", link: "/promote/常用算法/" },
+                    { text: "前端框架", link: "/promote/前端框架/" },
+                    { text: "前端基础", link: "/promote/前端基础/" },
+                    { text: "其他", link: "/promote/其他/" }
+                ]
+            },
+            {
                 text: "算法篇",
                 items: [
-                    { text: "算法基础", link: "/算法/算法基础/" },
-                    { text: "初级算法", link: "/算法/初级算法/" },
-                    { text: "中级算法", link: "/算法/中级算法/" },
-                    { text: "高级算法", link: "/算法/高级算法/" }
+                    { text: "数据结构", link: "/算法/数据结构/时间复杂度和空间复杂度/" },
+                    { text: "排序算法", link: "/算法/排序算法/冒泡排序/" },
+                    { text: "基础算法", link: "/算法/基础算法/两数之和/" },
+                    { text: "深度优先", link: "/算法/深度优先/二叉树的最大深度/" },
+                    { text: "回溯算法", link: "/算法/回溯算法/括号生成/" },
+                    { text: "分治算法", link: "/算法/分治算法/搜索二维矩阵II/" },
+                    { text: "动态规划", link: "/算法/动态规划/使用最小花费爬楼梯/" }
                 ],
             },
             {
@@ -111,7 +119,7 @@ module.exports = {
         sidebar: {
             ...handlePathB("base", base()),
             ...handlePathB("promote", { "html": [["", "自定义"]], "css": [["", "自定义"]], "js": [["", "自定义"]], "http": [["", "自定义"]] }),
-            ...handlePathB("framework", framework()),
+            ...handlePath("框架", framework()),
             ...handlePathB("project", { "cli": [["", "前端脚手架方案"]], "code": [["", "前端代码规范"]], "component": [["", "组件库方案"]], "deploy": [["", "自动化部署流程方案"]], "monitor": [["", "前端监控方案"]], "page": [["", "多页面打包方案"]], "technology": [["", "前端技术方案"]] }),
             ...handlePathB("算法", algorithm()),
             ...handlePathB("document", document()),
@@ -120,13 +128,27 @@ module.exports = {
 };
 
 function algorithm() {
-    return { "算法基础": [["", "算法基础"]], "初级算法": [["", "初级算法"]], "中级算法": [["", "中级算法"]], "高级算法": [["", "高级算法"]] }
+    return {
+        "数据结构": [["时间复杂度和空间复杂度", "时间复杂度和空间复杂度"]],
+        "排序算法": [["冒泡排序", "冒泡排序"], ["选择排序", "选择排序"]],
+        "基础算法": [["两数之和", "两数之和"]],
+        "深度优先": [["二叉树的最大深度", "二叉树的最大深度"]],
+        "回溯算法": [["括号生成", "括号生成"]],
+        "分治算法": [["搜索二维矩阵II", "搜索二维矩阵II"]],
+        "动态规划": [["使用最小花费爬楼梯", "使用最小花费爬楼梯"]]
+    }
 }
 
 function framework() {
     return {
-        "vue": [["", "说明"], ["数据驱动", "数据驱动"], ["编译流程", "编译流程"]],
-        "webpack": [["", "原理"]],
+        "vue": {
+            "数据驱动": [["案例代码", "案例代码"], ["构造函数处理", "构造函数处理"], ["初始化", "初始化"], ["挂载", "挂载"], ["_render", "_render"], ["_update", "_update"], ["总结", "总结"]],
+            "编译流程": [["回顾", "回顾"], ["编译器入口处理", "编译器入口处理"], ["pars流程", "pars流程"], ["优化流程", "优化流程"], ["代码生成", "代码生成"]],
+            "响应式原理": [["案例", "案例"], ["响应式原理", "响应式原理"], ["依赖收集", "依赖收集"], ["派发更新", "派发更新"], ["原理图", "原理图"]],
+            "组件化": [["案例", "案例"], ["回顾渲染流程", "回顾渲染流程"], ["组件创建时机", "组件创建时机"], ["创建组件vnode", "创建组件vnode"], ["组件patch", "组件patch"]],
+            "扩展": [["keep-alive", "keep-alive"], ["set和delete", "set和delete"], ["computed原理", "computed原理"], ["nextTick", "nextTick"], ["watcher原理", "watcher原理"], ["slot", "slot"]]
+        },
+        "webpack": [["webpack调试", "webpack调试"], ["初始化阶段", "初始化阶段"], ["编译阶段", "编译阶段"], ["输出阶段", "输出阶段"], ["总结", "总结"]],
         "snabbdom": [["", "源码分析"]],
         "react": [["", "自定义"]],
         "babel": [["", "bable主流程"], ["bable源码冷知识", "bable源码冷知识"]],
@@ -214,29 +236,32 @@ function handlePathB(root, pathObj) {
     return obj;
 }
 
-function getThemeSidebarA(groupA, introductionA) {
-    introductionA = "概括";
-    return [
-        {
-            title: groupA,
-            collapsable: false,
-            sidebarDepth: 3,
-            children: [
-                ['', introductionA],
-                ['one', "第一章"],
-                ['two', "第二章"],
-                ['three', "第三章"],
-                ['four', "第四章"],
-            ]
+function handlePath(root, pathObj) {
+    let obj = {};
+    let paths = Object.keys(pathObj)
+    for (const path of paths) {
+        if (Array.isArray(pathObj[path])) {
+            let allPth = "/" + root + "/" + path + "/";
+            obj[allPth] = getThemeSidebarB(path, pathObj[path]);
+        } else {
+            let items = Object.keys(pathObj[path])
+            for (const item of items) {
+                let allPth = "/" + root + "/" + path + "/" + item + "/";
+                obj[allPth] = getThemeSidebarB(path, pathObj[path][item]);
+            }
         }
-    ]
+    }
+
+    return obj;
 }
+
 function getThemeSidebarB(groupB, children) {
+
     return [
         {
             title: groupB,
             collapsable: false,
-            sidebarDepth: 2,
+            sidebarDepth: 3,
             children: children
         }
     ]
