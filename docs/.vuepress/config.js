@@ -50,27 +50,27 @@ module.exports = {
             {
                 text: "框架篇",
                 items: [
-                    { text: "vue-数据驱动", link: "/框架/vue/数据驱动/案例代码/" },
-                    { text: "vue-编译流程", link: "/框架/vue/编译流程/回顾/" },
-                    { text: "vue-响应式原理", link: "/框架/vue/响应式原理/案例/" },
-                    { text: "vue-组件化", link: "/框架/vue/组件化/案例/" },
-                    { text: "vue-扩展", link: "/框架/vue/扩展/keep-alive/" },
+                    { text: "vue-数据驱动", link: "/框架篇/vue/数据驱动/案例代码/" },
+                    { text: "vue-编译流程", link: "/框架篇/vue/编译流程/回顾/" },
+                    { text: "vue-响应式原理", link: "/框架篇/vue/响应式原理/案例/" },
+                    { text: "vue-组件化", link: "/框架篇/vue/组件化/案例/" },
+                    { text: "vue-扩展", link: "/框架篇/vue/扩展/keep-alive/" },
                     // { text: "react", link: "/framework/react/" },
-                    { text: "snabbdom", link: "/框架/snabbdom/" },
-                    { text: "babel", link: "/框架/babel/" },
-                    { text: "webpack", link: "/框架/webpack/初始化阶段/" }
+                    { text: "snabbdom", link: "/框架篇/snabbdom/" },
+                    { text: "babel", link: "/框架篇/babel/" },
+                    { text: "webpack", link: "/框架篇/webpack/初始化阶段/" }
                 ],
             },
             {
                 text: "项目篇",
                 items: [
-                    { text: "脚手架方案", link: "/project/cli/" },
-                    { text: "多页面方案", link: "/project/page/" },
-                    { text: "部署方案", link: "/project/deploy/" },
-                    { text: "代码规范方案", link: "/project/code/" },
-                    { text: "技术方案", link: "/project/technology/" },
-                    { text: "组件库方案", link: "/project/component/" },
-                    { text: "监控方案", link: "/project/monitor/" }
+                    { text: "前端脚手架方案", link: "/项目篇/cli/" },
+                    { text: "前端多页面方案", link: "/项目篇/page/" },
+                    { text: "前端部署方案", link: "/项目篇/deploy/" },
+                    { text: "微前端方案", link: "/项目篇/微前端方案/微前端方案" },
+                    { text: "前端技术方案", link: "/项目篇/technology/" },
+                    // { text: "前端组件库方案", link: "/项目篇/component/" },
+                    { text: "前端监控方案", link: "/项目篇/前端监控方案/前端监控方案" }
                 ],
             },
             {
@@ -81,17 +81,18 @@ module.exports = {
                     { text: "http", link: "/base/http/" },
                     { text: "html", link: "/base/html/" },
                     { text: "css", link: "/base/css/" },
-                    { text: "css3", link: "/base/css3/" },
+                    // { text: "css3", link: "/base/css3/" },
                 ],
             },
             {
                 text: "提升篇",
                 items: [
-                    { text: "计算机基础", link: "/promote/计算机基础/" },
-                    { text: "常用算法", link: "/promote/常用算法/" },
-                    { text: "前端框架", link: "/promote/前端框架/" },
-                    { text: "前端基础", link: "/promote/前端基础/" },
-                    { text: "其他", link: "/promote/其他/" }
+                    // { text: "计算机基础", link: "/提升篇/计算机基础/" },
+                    // { text: "常用算法", link: "/提升篇/常用算法/" },
+                    // { text: "前端框架", link: "/提升篇/前端框架/" },
+                    { text: "前端基础-js", link: "/提升篇/前端基础/js/原型链" },
+                    { text: "前端基础-css", link: "/提升篇/前端基础/css/BFC" }
+                    // { text: "其他", link: "/提升篇/其他/" }
                 ]
             },
             {
@@ -118,14 +119,33 @@ module.exports = {
         ],
         sidebar: {
             ...handlePathB("base", base()),
-            ...handlePathB("promote", { "html": [["", "自定义"]], "css": [["", "自定义"]], "js": [["", "自定义"]], "http": [["", "自定义"]] }),
-            ...handlePath("框架", framework()),
-            ...handlePathB("project", { "cli": [["", "前端脚手架方案"]], "code": [["", "前端代码规范"]], "component": [["", "组件库方案"]], "deploy": [["", "自动化部署流程方案"]], "monitor": [["", "前端监控方案"]], "page": [["", "多页面打包方案"]], "technology": [["", "前端技术方案"]] }),
-            ...handlePathB("算法", algorithm()),
+            ...handlePath("提升篇", pro()),
+            ...handlePath("框架篇", framework()),
+            ...handlePathB("项目篇", { "cli": [["", "前端脚手架方案"]], "微前端方案": [["微前端方案", "微前端方案"]], "component": [["", "组件库方案"]], "deploy": [["", "自动化部署流程方案"]], "前端监控方案": [["前端监控方案", "前端监控方案"]], "page": [["", "多页面打包方案"]], "technology": [["", "前端技术方案"]] }),
+            ...handlePathB("算法篇", algorithm()),
             ...handlePathB("document", document()),
         },
     },
 };
+
+function pro() {
+    return {
+        "计算机基础": [["", "自定义"]],
+        "常用算法": [["", "自定义"]],
+        "前端框架": [["", "自定义"]],
+        "前端基础": {
+            "js": [
+                ["闭包", "闭包"],
+                ["继承", "继承"],
+                ["原型链", "原型链"]
+            ],
+            "css": [
+                ["BFC", "BFC"]
+            ]
+        },
+        "其他": [["", "自定义"]]
+    }
+}
 
 function algorithm() {
     return {
